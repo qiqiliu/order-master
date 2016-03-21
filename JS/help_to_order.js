@@ -37,6 +37,7 @@ function get_storage(){
         &&document.getElementById("combo").innerHTML=='') {
         document.getElementById("person").disabled = true;
     }
+    location.href="#";
 }
 function get_disabled(){
     if(document.getElementById("people").innerHTML!=''&&document.getElementById("restraurant").innerHTML!='') {
