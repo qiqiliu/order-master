@@ -5,21 +5,20 @@ function choose_restraurant(name){
     localStorage.setItem("restraurant",name);
 }
 window.onload=function() {
-    get_all_restraurant();
+    get_json_and_render_page();
 }
-function get_all_restraurant() {
-    $.getJSON('../JSON/order-master.json',function(data) {
-        var all = (data.restraurants);
-        var all_restraurants = [];
-        for (i = 0; i < all.length; i++) {
-            all_restraurants.push(all[i].name);
-        }
-        for (i = 0; i < all_restraurants.length; i++) {
-            var restraurants = all_restraurants[i];
-            var all_restraurant_list = '<ul class="list-style-2">' + '<li>' +
-                "<a href='help_to_order.html' onclick = choose_restraurant('" + restraurants + "')>" +
-                '<h3>' + all_restraurants[i] + '</h3></a></li>' + '</ul>';
-            document.getElementById("wrapper").innerHTML += all_restraurant_list;
-        }
-    });
+function get_json_and_render_page(){
+    $.getJSON('../JSON/order-master.json',function(data) { var all = (data.restraurants);
+        var all_restraurants= get_all_restraurants(all);
+        get_all_restraurants_list(all_restraurants);});
+}
+function get_all_restraurants(all) {
+    var all_restraurants_arrage = [];
+    _.map(all,function(restraurant){ all_restraurants_arrage.push(restraurant.name);})
+    return all_restraurants_arrage;
+}
+function get_all_restraurants_list(all_restraurants){
+    _.map(all_restraurants,function(name){ var all_restraurant_list = '<ul class="list-style-2">' + '<li>' +
+        "<a href='help_to_order.html' onclick=choose_restraurant('" + name + "')>"+'<h3>'+name +'</h3></a></li>'+'</ul>';
+        document.getElementById("wrapper").innerHTML += all_restraurant_list;})
 }

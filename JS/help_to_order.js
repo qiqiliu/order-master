@@ -5,8 +5,8 @@ window.onload = function(){
     get_Item();
     get_restraurant();
     get_combo();
-    get_disabled();
-    get_order_list();
+    remove_choose_combo_disabled();
+    remove_confirm_disabled();
 }
 function get_Item(){
     document.getElementById("people").innerHTML= localStorage.getItem("person");
@@ -17,7 +17,21 @@ function get_restraurant(){
 function get_combo(){
     document.getElementById("combo").innerHTML= localStorage.getItem("combo");
 }
-function get_storage(){
+function remove_choose_combo_disabled(){
+    if(document.getElementById("people").innerHTML!=''&&document.getElementById("restraurant").innerHTML!='') {
+        document.getElementById("combos").disabled=false;
+    }
+}
+function remove_confirm_disabled(){
+    if(document.getElementById("people").innerHTML!=''&&document.getElementById("restraurant").innerHTML!=''
+        &&document.getElementById("combo").innerHTML!=''){
+        document.getElementById("person").disabled=false;
+    }
+}
+function get_different_combo(){
+        location.href='choose_difference_combo.html';
+}
+function get_storage_and_return_page_top(){
     var click_storage={person:localStorage.getItem("person"),restraurant:localStorage.getItem("restraurant"),
         combo:localStorage.getItem("combo"),price:localStorage.getItem("price")};
     var click_storages=JSON.parse(localStorage.getItem("order")) || [];
@@ -30,26 +44,5 @@ function get_storage(){
     document.getElementById("people").innerHTML="";
     document.getElementById("restraurant").innerHTML="";
     document.getElementById("combo").innerHTML="";
-    if(document.getElementById("people").innerHTML==''&&document.getElementById("restraurant").innerHTML==''){
-        document.getElementById("combos").disabled=true;
-    }
-    if(document.getElementById("people").innerHTML==''&&document.getElementById("restraurant").innerHTML==''
-        &&document.getElementById("combo").innerHTML=='') {
-        document.getElementById("person").disabled = true;
-    }
     location.href="#";
-}
-function get_disabled(){
-    if(document.getElementById("people").innerHTML!=''&&document.getElementById("restraurant").innerHTML!='') {
-        document.getElementById("combos").disabled=false;
-    }
-}
-function get_order_list(){
-    if(document.getElementById("people").innerHTML!=''&&document.getElementById("restraurant").innerHTML!=''
-        &&document.getElementById("combo").innerHTML!=''){
-        document.getElementById("person").disabled=false;
-    }
-}
-function get_different_combo(){
-        location.href='choose_difference_combo.html';
 }
