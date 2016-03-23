@@ -1,6 +1,3 @@
-body {
-    margin: 0px;
-}
 .help-to-order {
     position: absolute;
     z-index: -1;
@@ -17,10 +14,10 @@ body {
     -webkit-transition: all 0.3s ease;
 }
 .header-left {
-    position: absolute;
+    position:absolute;
     border-right: 1px;
     left: 0px;
-    top: 12px;
+    top: 8px;
     border-right: 1px;
     border-right-style: initial;
     border-right-color: initial;
@@ -34,23 +31,12 @@ body {
     line-height: 20px;
     color: #333;
     text-align: center;
-    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
     vertical-align: middle;
     cursor: pointer;
     text-decoration: none;
-    background-color: #f5f5f5;
-    background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
-    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
-    background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
-    background-image: -o-linear-gradient(top,#fff,#e6e6e6);
     background-image: linear-gradient(to bottom,#fff,#e6e6e6);
-    background-repeat: repeat-x;
-    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    border-bottom-color: #b3b3b3;
-    -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
     border: 1px solid;
@@ -58,19 +44,6 @@ body {
     border-right-color: rgba(0, 0, 0, 0.0980392);
     border-bottom-color: rgb(179, 179, 179);
     border-left-color: rgba(0, 0, 0, 0.0980392);
-}
-.btn-primary {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-    background-color: #006dcc;
-    background-image: -moz-linear-gradient(top,#08c,#04c);
-    background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
-    background-image: -webkit-linear-gradient(top,#08c,#04c);
-    background-image: -o-linear-gradient(top,#08c,#04c);
-    background-image: linear-gradient(to bottom,#08c,#04c);
-    background-repeat: repeat-x;
-    border-color: #04c #04c #002a80;
-    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0, 0, 0, 0.25);
 }
 .btn-inverse {
     color: #fff;
@@ -110,7 +83,7 @@ li {
     text-align: -webkit-match-parent;
 }
 .list-style-1 li {
-    padding: 0 10px;
+    padding: 0 5px;
     font-size: 14px;
     position: relative;
 }
@@ -149,8 +122,9 @@ h4 {
 .btn:hover{
     background-image: linear-gradient(rgb(245, 245,245 ), rgb(230, 230, 230));
 }
-.btn:active{background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
-to( rgba(0, 0, 0, 0.1)));
+.btn a:active{
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
+    to( rgba(0, 0, 0, 0.1)));
 }
 .btn-large {
     padding: 11px 19px;
@@ -175,6 +149,4 @@ to( rgba(0, 0, 0, 0.1)));
 }
 .list-style-1 li button:disabled{
     background:#e6e6e6;
-    opacity: .65;
-    background-image: none;
 }

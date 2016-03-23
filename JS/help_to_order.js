@@ -44,5 +44,5 @@ function get_storage_and_return_page_top(){
     document.getElementById("combo").innerHTML="";
     document.getElementById("combos").disabled=true;
     document.getElementById("person").disabled=true;
-    location.href="#";
+    location.href="#top";
 }

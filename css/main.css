@@ -19,10 +19,9 @@
 }
 .button-information a:hover{
     background-image: linear-gradient(rgb(245, 245,245 ), rgb(230, 230, 230));
-
 }
 .button-information a:active{background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
-to( rgba(0, 0, 0, 0.1)));
+    to( rgba(0, 0, 0, 0.1)));
 }
 .list-style-1 {
     list-style: none;
