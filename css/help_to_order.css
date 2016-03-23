@@ -1,3 +1,6 @@
+body {
+    margin: 0px;
+}
 .help-to-order {
     position: absolute;
     z-index: -1;
@@ -14,10 +17,10 @@
     -webkit-transition: all 0.3s ease;
 }
 .header-left {
-    position:absolute;
+    position: absolute;
     border-right: 1px;
     left: 0px;
-    top: 8px;
+    top: 12px;
     border-right: 1px;
     border-right-style: initial;
     border-right-color: initial;
@@ -146,7 +149,7 @@ h4 {
 .btn:hover{
     background-image: linear-gradient(rgb(245, 245,245 ), rgb(230, 230, 230));
 }
-.btn a:active{background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
+.btn:active{background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
 to( rgba(0, 0, 0, 0.1)));
 }
 .btn-large {
@@ -172,4 +175,6 @@ to( rgba(0, 0, 0, 0.1)));
 }
 .list-style-1 li button:disabled{
     background:#e6e6e6;
+    opacity: .65;
+    background-image: none;
 }
