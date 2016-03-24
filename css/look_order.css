@@ -25,7 +25,12 @@ body {
     border-right-style: initial;
     border-right-color: initial;
 }
-.header-left a:hover{background: #383838}
+.header-left a:hover{
+    background: #383838
+}
+.header-left a:active{
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#444),to(#1F2021));
+}
 .btn {
     display: inline-block;
     padding: 4px 12px;

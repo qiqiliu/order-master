@@ -17,12 +17,17 @@
     position:absolute;
     border-right: 1px;
     left: 0px;
-    top: 8px;
+    top: 12px;
     border-right: 1px;
     border-right-style: initial;
     border-right-color: initial;
 }
-.header-left a:hover{background: #383838}
+.header-left a:hover{
+    background: #383838
+}
+.header-left a:active{
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#444),to(#1F2021));
+}
 .btn {
     display: inline-block;
     padding: 4px 12px;
@@ -67,8 +72,9 @@
 .button-content a:hover{
     background-image: linear-gradient(rgb(245, 245,245 ), rgb(230, 230, 230));
 }
-.button-content a:active{background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
-to( rgba(0, 0, 0, 0.1)));
+.button-content a:active{
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0.1)),
+                      to( rgba(0, 0, 0, 0.1)));
 }
 .list-style-1 {
     list-style: none;
