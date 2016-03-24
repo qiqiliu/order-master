@@ -19,10 +19,18 @@ function get_restraurant_information (all) {
     var arrage_combo=order_restraurant[0].combo;
     return arrage_combo;
 }
+function get_list_string(combo){
+    var string_list='<ul class="list-style-2"><li>'+"<a href='help_to_order.html' onclick = choose_combo('";
+    var string_bound="','";
+    var string_style="')>"+'<h3>';
+    var string_price='</h3><p>'+'￥';
+    var string_end_label= '</p></a></li>' + '</ul>';
+    var string_restraurant_name=string_list+combo.combo_name+string_bound+ combo.combo_price+string_style+combo.combo_name
+        +string_price+combo.combo_price+string_end_label;
+    return string_restraurant_name;
+}
 function get_difference_combo (arrage_combo) {
     _.map(arrage_combo, function (combo) {
-        var restraurant_combo_list = '<ul class="list-style-2">' + '<li>' +
-            "<a href='help_to_order.html' onclick = choose_combo('" + combo.combo_name + "','" + combo.combo_price + "')>" +
-            '<h3>' + combo.combo_name + '</h3><p>' + '￥' + combo.combo_price + '</p></a></li>' + '</ul>';
+        var restraurant_combo_list = get_list_string(combo);
         document.getElementById("order_list").innerHTML += restraurant_combo_list;})
 }

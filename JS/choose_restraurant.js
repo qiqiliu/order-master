@@ -17,8 +17,15 @@ function get_all_restraurants(all) {
     _.map(all,function(restraurant){ all_restraurants_arrage.push(restraurant.name);})
     return all_restraurants_arrage;
 }
+function get_list_string(name){
+    var string_list='<ul class="list-style-2">'+'<li>'+"<a href='help_to_order.html' onclick=choose_restraurant('";
+    var string_style="')>"+'<h3>';
+    var string_end_label='</h3></a></li></ul>';
+    var string_restraurant_name=string_list+name+string_style+name+string_end_label;
+    return string_restraurant_name;
+}
 function get_all_restraurants_list(all_restraurants){
-    _.map(all_restraurants,function(name){ var all_restraurant_list = '<ul class="list-style-2">' + '<li>' +
-        "<a href='help_to_order.html' onclick=choose_restraurant('" + name + "')>"+'<h3>'+name +'</h3></a></li>'+'</ul>';
+    _.map(all_restraurants,function(name){
+        var all_restraurant_list = get_list_string(name);
         document.getElementById("wrapper").innerHTML += all_restraurant_list;})
 }
