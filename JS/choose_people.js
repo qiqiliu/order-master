@@ -2,15 +2,10 @@
  * Created by grass on 16-2-24.
  */
 window.onload = function(){
-    get_json_and_render_page();
+    get_json_and_choose_person();
 }
 function choose_people(name){
     localStorage.setItem("person",name);
-}
-function get_json_and_render_page() {
-    $.getJSON('../JSON/order-master.json', function (data) {
-        var all_person = (data.person_name);
-        get_all_person(all_person);});
 }
 function get_list_string(person){
     var string__list= '<ul class="list-style-2">'+'<li>'+"<a href='help_to_order.html'"

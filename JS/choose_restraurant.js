@@ -1,21 +1,11 @@
 /**
  * Created by grass on 16-2-25.
  */
+window.onload=function() {
+    get_restraurant_list();
+}
 function choose_restraurant(name){
     localStorage.setItem("restraurant",name);
-}
-window.onload=function() {
-    get_json_and_render_page();
-}
-function get_json_and_render_page(){
-    $.getJSON('../JSON/order-master.json',function(data) { var all = (data.restraurants);
-        var all_restraurants= get_all_restraurants(all);
-        get_all_restraurants_list(all_restraurants);});
-}
-function get_all_restraurants(all) {
-    var all_restraurants_arrage = [];
-    _.map(all,function(restraurant){ all_restraurants_arrage.push(restraurant.name);})
-    return all_restraurants_arrage;
 }
 function get_list_string(name){
     var string_list='<ul class="list-style-2">'+'<li>'+"<a href='help_to_order.html' onclick=choose_restraurant('";

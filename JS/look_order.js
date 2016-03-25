@@ -5,13 +5,6 @@ var arrage_order = JSON.parse(localStorage.getItem("order"))||[];
 window.onload = function() {
     get_json_and_render_page();
 }
-function get_json_and_render_page() {
-    $.getJSON('../JSON/order-master.json', function (data) { var all_person = (data.person_name);
-        get_order_list_black();
-        get_order_list_red();
-        get_order_information(all_person);
-        get_no_order_person_list(all_person);});
-}
 function get_order_information(all_person) {
     var sum = _.reduce( _.map(arrage_order, function (order) {return +order.price}), function (memo, num) {return memo + num;}, 0);
     var arrage_order_remove_same= _.uniq(_.map(arrage_order,function (name){return name.person}));
