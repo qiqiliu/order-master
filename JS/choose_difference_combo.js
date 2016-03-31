@@ -2,7 +2,7 @@
  * Created by grass on 16-2-25.
  */
 window.onload=function() {
-    get_json_restraurant_information();
+    get_restraurant_combo_list();
 }
 function choose_combo(name,price){
     localStorage.setItem("combo",name);
@@ -22,4 +22,9 @@ function get_list_string(combo){
     var string_restraurant_name=string_list+combo.combo_name+string_bound+ combo.combo_price+string_style+combo.combo_name
         +string_price+combo.combo_price+string_end_label;
     return string_restraurant_name;
+}
+function get_restraurant_combo_list(all) {
+    var restraurants_combo =  new Restraurant(all);
+    var arrage_combo_name = restraurants_combo.restraurant_combo();
+    get_difference_combo(arrage_combo_name);
 }

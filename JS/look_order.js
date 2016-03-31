@@ -1,11 +1,15 @@
 /**
  * Created by grass on 16-2-29.
  */
-var arrage_order = JSON.parse(localStorage.getItem("order"))||[];
 window.onload = function() {
-    get_json_and_render_page();
+    look_order();
+};
+function get_arrage_order(){
+    var arrage_order = JSON.parse(localStorage.getItem("order"))||[];
+    return arrage_order;
 }
 function get_order_information(all_person) {
+    var arrage_order=get_arrage_order();
     var sum = _.reduce( _.map(arrage_order, function (order) {return +order.price}), function (memo, num) {return memo + num;}, 0);
     var arrage_order_remove_same= _.uniq(_.map(arrage_order,function (name){return name.person}));
     document.getElementById("number-order").innerHTML = arrage_order_remove_same.length + '人已定';
@@ -14,6 +18,7 @@ function get_order_information(all_person) {
         (all_person.length - arrage_order_remove_same.length) + '人未定，总计：' + sum + '元';
 }
 function get_order_list_black() {
+    var arrage_order=get_arrage_order();
     var arrage_order_person=_.filter(arrage_order,function(order){return order.price<12});
     _.map(arrage_order_person,function(order){
         var object_order= get_string_list(order);
@@ -21,6 +26,7 @@ function get_order_list_black() {
         document.getElementById("list-order").innerHTML += list; })
 }
 function get_order_list_red(){
+    var arrage_order=get_arrage_order();
     var arrage_other_order_person=_.reject(arrage_order,function(order){return order.price<12});
     _.map(arrage_other_order_person,function(order){
         var object_order= get_string_list(order);
@@ -28,6 +34,7 @@ function get_order_list_red(){
         document.getElementById("list-order").innerHTML += list; })
 }
 function get_no_order_person_list(all_person){
+    var arrage_order=get_arrage_order();
     var order_name= _.map(arrage_order,function (order){return order.person});
     var no_order_person = _.difference(all_person,order_name);
     _.map(no_order_person,function(order){
@@ -50,4 +57,12 @@ function get_string_list(order){
     var string_not_order_list=string_list+order+string_not_order_end;
     var object_order={ black_list:string_order_list_black,red_list:string_order_list_red,not_order_list:string_not_order_list};
     return object_order;
+}
+function look_order(){
+    var people= new Person();
+    var all_person = people.all;
+    get_order_list_black();
+    get_order_list_red();
+    get_order_information(all_person);
+    get_no_order_person_list(all_person);
 }

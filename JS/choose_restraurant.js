@@ -3,7 +3,7 @@
  */
 window.onload=function() {
     get_restraurant_list();
-}
+};
 function choose_restraurant(name){
     localStorage.setItem("restraurant",name);
 }
@@ -18,4 +18,9 @@ function get_all_restraurants_list(all_restraurants){
     _.map(all_restraurants,function(name){
         var all_restraurant_list = get_list_string(name);
         document.getElementById("wrapper").innerHTML += all_restraurant_list;})
+}
+function get_restraurant_list(all) {
+    var all_restraurants_name= new Restraurant(all);
+    var all_restraurants=all_restraurants_name.restraurant_name();
+    get_all_restraurants_list(all_restraurants);
 }
