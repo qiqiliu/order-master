@@ -3,7 +3,7 @@
  */
 window.onload=function() {
     get_restraurant_combo_list();
-}
+};
 function choose_combo(name,price){
     localStorage.setItem("combo",name);
     localStorage.setItem("price",price);
@@ -23,8 +23,8 @@ function get_list_string(combo){
         +string_price+combo.combo_price+string_end_label;
     return string_restraurant_name;
 }
-function get_restraurant_combo_list(all) {
-    var restraurants_combo =  new Restraurant(all);
+function get_restraurant_combo_list() {
+    var restraurants_combo =  new Restraurant();
     var arrage_combo_name = restraurants_combo.restraurant_combo();
     get_difference_combo(arrage_combo_name);
 }
