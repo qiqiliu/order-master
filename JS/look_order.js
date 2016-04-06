@@ -5,7 +5,7 @@ window.onload = function() {
     look_order();
 };
 function get_arrage_order(){
-    var arrage_order = JSON.parse( (new Person()).order_list())||[];
+    var arrage_order = JSON.parse( Person.order_list()) || [];
     return arrage_order;
 }
 function get_order_information(all_person) {
@@ -35,11 +35,11 @@ function get_order_list_red(){
 }
 function get_no_order_person_list(all_person){
     var arrage_order=get_arrage_order();
-    var order_name= _.map(arrage_order,function (order){return order.person});
+    var order_name=  _.map(arrage_order,function (order){return order.person});
     var no_order_person = _.difference(all_person,order_name);
     _.map(no_order_person,function(order){
-        var object_order= get_string_list(order);
-        var not_order=object_order.not_order_list;
+        var object_order = get_string_list(order);
+        var not_order = object_order.not_order_list;
         document.getElementById("no-order-list").innerHTML += not_order;})
 }
 function get_string_list(order){

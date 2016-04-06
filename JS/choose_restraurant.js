@@ -1,7 +1,7 @@
 /**
  * Created by grass on 16-2-25.
  */
-window.onload=function() {;
+window.onload=function() {
     get_all_restraurants_list();
 };
 function choose_restraurant(name){

@@ -11,22 +11,22 @@ function Restraurant () {
     }).init();
     this.all = list;
 }
+Restraurant.current_restraurant = function () {
+    return localStorage.getItem("restraurant");
+};
+Restraurant.current_restraurant_combo= function (){
+    return localStorage.getItem("combo");
+};
+Restraurant.current_restraurant_combo_price = function (){
+    return localStorage.getItem("price");
+};
 Restraurant.prototype.restraurant_name = function restraurant_name( ) {
     var arrage_name = [];
     _.map(this.all, function (restraurant) { return arrage_name.push(restraurant.name);});
     return arrage_name;
 };
-Restraurant.prototype.current_restraurant = function current_restraurant(){
-    return localStorage.getItem("restraurant");
-};
-Restraurant.prototype.current_restraurant_combo= function current_restraurant_combo(){
-    return localStorage.getItem("combo");
-};
-Restraurant.prototype.current_restraurant_combo_price = function current_restraurant_combo_price(){
-    return localStorage.getItem("price");
-};
 Restraurant.prototype.restraurant_combo = function restraurant_combo(){
-    var current_restraurant = (new Restraurant).current_restraurant();
+    var current_restraurant =  Restraurant.current_restraurant();
     var order_restraurant = _.filter(this.all, function (restraurant) {
         return current_restraurant == restraurant.name;});
     var arrage_combo = order_restraurant[0].combo;
