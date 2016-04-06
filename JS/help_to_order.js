@@ -7,15 +7,15 @@ window.onload = function(){
     get_combo();
     remove_choose_combo_disabled();
     remove_confirm_disabled();
-}
+};
 function get_person(){
-    document.getElementById("people").innerHTML= localStorage.getItem("person");
+    document.getElementById("people").innerHTML= (new Person()).current_person();
 }
 function get_restraurant(){
-    document.getElementById("restraurant").innerHTML= localStorage.getItem("restraurant");
+    document.getElementById("restraurant").innerHTML= (new Restraurant()).current_restraurant();
 }
 function get_combo(){
-    document.getElementById("combo").innerHTML= localStorage.getItem("combo");
+    document.getElementById("combo").innerHTML= (new Restraurant()).current_restraurant_combo();
 }
 function remove_choose_combo_disabled(){
     if(document.getElementById("people").innerHTML!=''&&document.getElementById("restraurant").innerHTML!='') {
@@ -32,8 +32,8 @@ function get_different_combo(){
     location.href='choose_difference_combo.html';
 }
 function get_storage_and_return_page_top(){
-    var click_storage={person:localStorage.getItem("person"),restraurant:localStorage.getItem("restraurant"),
-        combo:localStorage.getItem("combo"),price:localStorage.getItem("price")};
+    var click_storage={person:(new Person().current_person()),restraurant:(new Restraurant()).current_restraurant(),
+        combo:(new Restraurant()).current_restraurant_combo(),price:(new Restraurant()).current_restraurant_combo_price()};
     var click_storages=JSON.parse(localStorage.getItem("order")) || [];
     click_storages.push(click_storage);
     localStorage.setItem("order",JSON.stringify(click_storages));

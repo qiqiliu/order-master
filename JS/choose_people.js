@@ -2,8 +2,8 @@
  * Created by grass on 16-2-24.
  */
 window.onload = function(){
-    get_person_list();
-}
+    get_all_person_list();
+};
 function choose_people(name){
     localStorage.setItem("person",name);
 }
@@ -15,13 +15,9 @@ function get_list_string(person){
     var string_person_list=string__list+person+string_style+person+string_end_label;
     return string_person_list;
 }
-function get_all_person_list(all_person){
+function get_all_person_list( ){
+    var all_person = (new Person()).all;
     _.map(all_person,function(person){
         var all_person_list = get_list_string(person)
         document.getElementById("wrapper").innerHTML += all_person_list;})
-}
-function get_person_list() {
-    var people= new Person();
-    var all_person = people.all;
-    get_all_person_list(all_person);
 }

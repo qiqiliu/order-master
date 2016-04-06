@@ -5,7 +5,7 @@ window.onload = function() {
     look_order();
 };
 function get_arrage_order(){
-    var arrage_order = JSON.parse(localStorage.getItem("order"))||[];
+    var arrage_order = JSON.parse( (new Person()).order_list())||[];
     return arrage_order;
 }
 function get_order_information(all_person) {

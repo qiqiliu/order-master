@@ -11,3 +11,9 @@ function Person() {
     }).init();
     this.all = list;
 }
+Person.prototype.current_person = function current_person(){
+    return localStorage.getItem("person");
+};
+Person.prototype.order_list = function order_list() {
+    return localStorage.getItem("order");
+};

@@ -1,6 +1,4 @@
 {
-  "person_name":["赵大","钱二","张三","李四","王五","刘六","刘朝雪","田彦博","赵杰","王思","冀宁宁","科比-布莱恩特","科勒-卡戴珊"],
-
   "restraurants":[{"name": "KFC", "combo":[{"combo_name":"田园脆鸡堡","combo_price":"10.00"},{"combo_name":"黄金咖喱猪排饭",
     "combo_price":"23.50"}, {"combo_name":"意式肉酱肉丸饭","combo_price":"16.00"},{"combo_name":"老北京鸡肉卷",
     "combo_price":"14.00"}, {"combo_name":"劲脆鸡腿堡","combo_price":"15.00"}]   },
