@@ -2,18 +2,21 @@
  * Created by grass on 16-3-25.
  */
 function Person() {
-    var localstorage_all_person;
-    var list = ({
-        name: localstorage_all_person = JSON.parse(localStorage.getItem("all-person")),
+    var arrage_person = ({
+        localstorage_all_person:JSON.parse(localStorage.getItem("all-person")),
         init: function () {
-            return this.name;
+            return this.localstorage_all_person;
         }
     }).init();
-    this.all = list;
+    this.arrage_person_info = arrage_person;
 }
-Person.current_person = function (){
+Person.get_person_json = function(){
+    $.getJSON('../JSON/person_information.json', function (data) {
+        localStorage.setItem("all-person",JSON.stringify(data.person_name));});
+};
+Person.get_current_person = function (){
     return localStorage.getItem("person");
 };
-Person.order_list = function () {
+Person.get_order_list = function () {
     return localStorage.getItem("order");
 };

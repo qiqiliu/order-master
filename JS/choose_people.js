@@ -16,7 +16,7 @@ function get_list_string(person){
     return string_person_list;
 }
 function get_all_person_list( ){
-    var all_person = (new Person()).all;
+    var all_person = (new Person()).arrage_person_info;
     _.map(all_person,function(person){
         var all_person_list = get_list_string(person)
         document.getElementById("wrapper").innerHTML += all_person_list;})

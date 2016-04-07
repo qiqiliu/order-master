@@ -5,7 +5,7 @@ window.onload = function() {
     look_order();
 };
 function get_arrage_order(){
-    var arrage_order = JSON.parse( Person.order_list()) || [];
+    var arrage_order = JSON.parse( Person.get_order_list()) || [];
     return arrage_order;
 }
 function get_order_information(all_person) {
@@ -60,7 +60,7 @@ function get_string_list(order){
 }
 function look_order(){
     var people= new Person();
-    var all_person = people.all;
+    var all_person = people.arrage_person_info;
     get_order_list_black();
     get_order_list_red();
     get_order_information(all_person);
